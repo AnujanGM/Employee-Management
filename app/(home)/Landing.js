@@ -35,7 +35,7 @@ const Landing = () => {
             <View style={{ height: 50, width: 50, borderRadius: 25, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center' }}>
               <Ionicons name="people" size={24} color="black" />
             </View>
-            <Text style={{ fontWeight: 600, marginTop: 12 }}>Mariik Attendance</Text>
+            <Text style={{ fontWeight: 600, marginTop: 12 }}>Mark Attendance</Text>
           </Pressable>
         </View>
 

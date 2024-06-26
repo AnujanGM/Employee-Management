@@ -26,10 +26,9 @@ const Adddetails = () => {
             address: address,
         };
         axios
-            .post("http://175.157.47.122:8000/addEmployee", employeeData)
+            .post("http://192.168.8.150:8000/addEmployee", employeeData)
             .then((response) => {
-                Alert.alert("Regitration Successful", "You have registered successfully"                    
-                );
+                Alert.alert("Registration Successful", "You have registered successfully");
                 setName("");
                 setEmployeeId("");
                 setAddress("");
@@ -38,10 +37,18 @@ const Adddetails = () => {
                 setSalary("");
                 setMobileNo("");
                 setDob("");
-            }).catch((error) => {
-                Alert.alert("Registration failed", "An error occured during registration");
-                console.log("Registration failed", JSON.stringify(error, null, 2));
-    });
+            })
+            .catch((error) => {
+                Alert.alert("Registration failed", "An error occurred during registration");
+                if (error.response) {
+                    console.log("Response error", JSON.stringify(error.response.data, null, 2));
+                } else if (error.request) {
+                    console.log("Request error", JSON.stringify(error.request, null, 2));
+                } else {
+                    console.log("Error", error.message);
+                }
+                console.log("Config error", JSON.stringify(error.config, null, 2));
+            });
     };
 
     return (
